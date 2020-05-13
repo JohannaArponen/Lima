@@ -7,10 +7,13 @@ public class PatrollingEnemy : MonoBehaviour{
     public Transform[] waypoints;
     public float waypointTriggerDistance = 1f;
     int nextWaypoint = 0;
-    NavMeshAgent agent;
+    public NavMeshAgent agent;
 
     void Awake() {
-        agent = GetComponent<NavMeshAgent>();
+        //agent = GetComponent<NavMeshAgent>();
+    }
+
+    private void Start() {
         agent.destination = waypoints[nextWaypoint].position;
     }
 
