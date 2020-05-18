@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour{
 
-    public int points = 100;
+    public int coinValue = 1;
 
-    void OnTriggerEnter2D(Collider2D collision) {
-        if(collision.tag == "Player") {
-            collision.GetComponent<PointControl>().Points += points;
-            Destroy(gameObject);
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.gameObject.CompareTag ("Player")) {
+            ScoreManager.instance.ChangeScore(coinValue);
+            //Destroy(gameObject);
         }
     }
 }
