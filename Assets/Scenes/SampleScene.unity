@@ -2040,7 +2040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc8147cc552308741bf43ae55fd41ee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
+  text: {fileID: 168396806}
 --- !u!4 &1931503687
 Transform:
   m_ObjectHideFlags: 0
@@ -2072,7 +2072,7 @@ GameObject:
   - component: {fileID: 1949176492}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2711,7 +2711,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140511434}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2734,7 +2734,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2838,7 +2838,7 @@ PrefabInstance:
     - target: {fileID: 3992847038203084333, guid: c8efc562a7a4df942a138b8e0e430b82,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.18
+      value: 5.1
       objectReference: {fileID: 0}
     - target: {fileID: 3992847038203084333, guid: c8efc562a7a4df942a138b8e0e430b82,
         type: 3}
@@ -2853,7 +2853,7 @@ PrefabInstance:
     - target: {fileID: 6862882632935165204, guid: c8efc562a7a4df942a138b8e0e430b82,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.29
+      value: -5.6
       objectReference: {fileID: 0}
     - target: {fileID: 6862882632935165204, guid: c8efc562a7a4df942a138b8e0e430b82,
         type: 3}

@@ -12,12 +12,13 @@ public class PatrollingEnemy : MonoBehaviour{
     // public NavMeshAgent agent;
 
     void Awake() {
+        sr = GetComponentInChildren<SpriteRenderer>();
+        sr.flipX = true;
         //agent = GetComponent<NavMeshAgent>();
     }
 
     void Start() {
-        sr = GetComponent<SpriteRenderer>();
-        sr.flipX = true;
+        
         //agent.destination = waypoints[nextWaypoint].position;
     }
 
@@ -35,10 +36,14 @@ public class PatrollingEnemy : MonoBehaviour{
             }
             //agent.destination = waypoints[nextWaypoint].position;
         }
-        if(nextWaypoint > 0) {
-            gameObject.GetComponent<SpriteRenderer>().flipX = false;
-        }else if(nextWaypoint < 0) {
-            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        if(sr != null) {
+            if (nextWaypoint > 0) {
+                sr.flipX = false;
+            }
+            else if (nextWaypoint < 0) {
+                sr.flipX = true;
+            }
         }
+        
     }
 }
