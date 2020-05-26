@@ -38,11 +38,11 @@ public class PatrollingEnemy : MonoBehaviour{
             //agent.destination = waypoints[nextWaypoint].position;
         }
         if(sr != null) {
-            if (nextWaypoint > 0) {
-                sr.flipX = false;
-            }
-            else if (nextWaypoint < 0) {
+            if (waypoints[nextWaypoint].position.x > transform.position.x) {
                 sr.flipX = true;
+            }
+            else {
+                sr.flipX = false;
             }
         }
         
@@ -50,13 +50,14 @@ public class PatrollingEnemy : MonoBehaviour{
 
     void GiveDamage() {
         if (FindPlayer) {
-           /* if (GameObject.FindGameObjectsWithTag("Player")) {
+           if (GameObject.FindGameObjectWithTag("Player")) {
                 GetComponent<HealthSystem>().Damaged();
-            }*/
+            }
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
-        FindPlayer = true;
+    private void OnTriggerEnter2D(Collider2D collider) {
+        //FindPlayer = true;
+        collider.GetComponent<HealthSystem>().Damaged();
     }
 }

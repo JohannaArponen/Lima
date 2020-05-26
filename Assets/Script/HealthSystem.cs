@@ -30,6 +30,7 @@ public class HealthSystem : MonoBehaviour{
     }
 
     public void Damaged() {
+        print("Taking damage");
         health -= 1;
         if(health < numOfHearts) {
             numOfHearts = health;
