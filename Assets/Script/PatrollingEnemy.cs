@@ -9,6 +9,7 @@ public class PatrollingEnemy : MonoBehaviour{
     public float waypointTriggerDistance = 1f;
     int nextWaypoint = 0;
     public float speed = 1f;
+    public bool FindPlayer;
     // public NavMeshAgent agent;
 
     void Awake() {
@@ -45,5 +46,17 @@ public class PatrollingEnemy : MonoBehaviour{
             }
         }
         
+    }
+
+    void GiveDamage() {
+        if (FindPlayer) {
+           /* if (GameObject.FindGameObjectsWithTag("Player")) {
+                GetComponent<HealthSystem>().Damaged();
+            }*/
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        FindPlayer = true;
     }
 }
