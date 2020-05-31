@@ -130,4 +130,9 @@ public class CharacterController2D : MonoBehaviour{
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+    private void OnCollisionEnter2D(Collision2D collisionInfo) {
+        if(collisionInfo.collider.tag == "Enemy") {
+            FindObjectOfType<GameManager>().EndGame();
+        }
+    }
 }
