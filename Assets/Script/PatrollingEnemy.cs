@@ -10,12 +10,12 @@ public class PatrollingEnemy : MonoBehaviour{
     int nextWaypoint = 0;
     public float speed = 1f;
     public bool FindPlayer;
-    // public NavMeshAgent agent;
+    private float dirX;
 
     void Awake() {
         sr = GetComponentInChildren<SpriteRenderer>();
         sr.flipX = true;
-        //agent = GetComponent<NavMeshAgent>();
+        dirX = -1f;
     }
 
     void Start() {
@@ -40,9 +40,11 @@ public class PatrollingEnemy : MonoBehaviour{
         if(sr != null) {
             if (waypoints[nextWaypoint].position.x > transform.position.x) {
                 sr.flipX = true;
+                dirX = 1f;
             }
             else {
                 sr.flipX = false;
+                dirX = -1f;
             }
         }
         
@@ -59,5 +61,10 @@ public class PatrollingEnemy : MonoBehaviour{
     private void OnTriggerEnter2D(Collider2D collider) {
         //FindPlayer = true;
         collider.GetComponent<HealthSystem>().Damaged();
+       // collider.gameObject.name.Equals("Player");
     }
+
+    /*private void OnTriggerExit2D(Collider2D collider) {
+        collider.gameObject.name.Equals("Player");
+    }*/
 }

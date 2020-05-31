@@ -42,5 +42,6 @@ public class HealthSystem : MonoBehaviour{
 
     public void Die() {
         Destroy(gameObject);
+        FindObjectOfType<GameManager>().EndGame();
     }
 }

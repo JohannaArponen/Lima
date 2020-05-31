@@ -9,7 +9,15 @@ public class GameManager : MonoBehaviour{
     public float restartDelay = 1f;
   
      public void EndGame() {
-        Debug.Log("GAME OVER");
+        if(gameHasEnded == false) {
+            gameHasEnded = true;
+            Debug.Log("GAME OVER");
+            Invoke("Restart", restartDelay);
+        }
+    }
+
+    void Restart() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
    
 }
