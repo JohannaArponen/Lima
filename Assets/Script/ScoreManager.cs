@@ -20,4 +20,8 @@ public class ScoreManager : MonoBehaviour{
         text.text = "X" + score.ToString();
     }
 
+    public void ChangeHeartsScore(int numOfHearts) {
+        score -= numOfHearts;
+        text.text = "X" + score.ToString();
+    }
 }
