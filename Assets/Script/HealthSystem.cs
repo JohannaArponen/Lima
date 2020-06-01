@@ -7,34 +7,41 @@ public class HealthSystem : MonoBehaviour{
     public int health;
     public int numOfHearts;
 
-    public Image[] hearts;
-    public Sprite fullHeart;
-    public Sprite emptyHeart;
+    public ScoreManager sm;
+
+    //public Image[] hearts;
+    //public Sprite fullHeart;
+    //public Sprite emptyHeart;
+
+
 
     void Update() {
-        if (health > numOfHearts) {
-            health = numOfHearts;
-        }
-        for (int i = 0; i < hearts.Length; i++) {
-            if(i < health) {
-                hearts[i].sprite = fullHeart;
-            } else {
-                hearts[i].sprite = emptyHeart;
-            }
-            if(i < numOfHearts) {
-                hearts[i].enabled = true;
-            } else {
-                hearts[i].enabled = false;
-            }
-        }
+        //if (health > numOfHearts) {
+        //    health = numOfHearts;
+        //}
+        //for (int i = 0; i < hearts.Length; i++) {
+        //    if(i < health) {
+        //        hearts[i].sprite = fullHeart;
+        //    } else {
+        //        hearts[i].sprite = emptyHeart;
+        //    }
+        //    if(i < numOfHearts) {
+        //        hearts[i].enabled = true;
+        //    } else {
+        //        hearts[i].enabled = false;
+        //    }
+        //}
+
+
     }
 
     public void Damaged() {
         print("Taking damage");
         health -= 1;
-        if(health < numOfHearts) {
-            numOfHearts = health;
-        }
+        sm.ChangeHealth(health);
+        //if(health < numOfHearts) {
+        //    numOfHearts = health;
+        //}
         if(health <= 0) {
             Die();
         }

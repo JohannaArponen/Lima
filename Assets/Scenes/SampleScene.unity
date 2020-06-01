@@ -703,7 +703,6 @@ GameObject:
   m_Component:
   - component: {fileID: 364110945}
   - component: {fileID: 364110944}
-  - component: {fileID: 364110946}
   m_Layer: 0
   m_Name: Piilo
   m_TagString: Untagged
@@ -752,19 +751,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &364110946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 364110943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98f1844ce5baccb43829ea9b22393196, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 1358296517}
 --- !u!1 &430366449
 GameObject:
   m_ObjectHideFlags: 0
@@ -3284,7 +3270,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0 X
+  m_text: 3 X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3911,7 +3897,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc8147cc552308741bf43ae55fd41ee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 168396806}
+  scoreText: {fileID: 168396806}
+  livesText: {fileID: 1793048429}
 --- !u!4 &1931503687
 Transform:
   m_ObjectHideFlags: 0
@@ -3985,8 +3972,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1558365295
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 4d476de697a248b4fbce688533f51724, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4127,6 +4114,7 @@ MonoBehaviour:
   controller: {fileID: 1949176490}
   animator: {fileID: 1949176492}
   runSpeed: 30
+  rend: {fileID: 1949176486}
 --- !u!95 &1949176492
 Animator:
   serializedVersion: 3
@@ -4159,10 +4147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  numOfHearts: 3
-  hearts: []
-  fullHeart: {fileID: 21300000, guid: c8057213fed860e49a2f67a9acd5996e, type: 3}
-  emptyHeart: {fileID: 21300000, guid: 0237f581819d07f498b784a16b778150, type: 3}
+  numOfHearts: 0
+  sm: {fileID: 1931503686}
 --- !u!1 &1979843114
 GameObject:
   m_ObjectHideFlags: 0

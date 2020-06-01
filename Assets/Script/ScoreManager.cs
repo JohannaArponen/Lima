@@ -6,8 +6,11 @@ using TMPro;
 public class ScoreManager : MonoBehaviour{
 
     public static ScoreManager instance;
-    public TextMeshProUGUI text;
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI livesText;
+
     int score;
+    int lifeAmount;
     
     void Start(){
         if(instance == null) {
@@ -17,11 +20,11 @@ public class ScoreManager : MonoBehaviour{
 
     public void ChangeScore(int coinValue) {
         score += coinValue;
-        text.text = "X" + score.ToString();
+        scoreText.text = "X" + score.ToString();
     }
 
-    public void ChangeHeartsScore(int numOfHearts) {
-        score -= numOfHearts;
-        text.text = "X" + score.ToString();
+    public void ChangeHealth(int newHealth) {
+        //lifeAmount -= newHealth;
+        livesText.text = newHealth.ToString() + ("X" );
     }
 }

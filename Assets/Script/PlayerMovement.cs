@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour{
     bool crouch = false;
     private bool canHide = false;
     private bool hiding = false;
-    private SpriteRenderer rend;
+    public SpriteRenderer rend;
 
     void Update(){
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
@@ -28,15 +28,12 @@ public class PlayerMovement : MonoBehaviour{
             crouch = false;
         }
 
-       /* if(canHide && Input.GetKey("H")) {
+        if (canHide && Input.GetKeyDown(KeyCode.H)) {
+            print("H nappi painettu");
             Physics2D.IgnoreLayerCollision(8, 9, true);
             rend.sortingOrder = 0;
             hiding = true;
-        } else {
-            Physics2D.IgnoreLayerCollision(8, 9, false);
-            rend.sortingOrder = 3;
-            hiding = false;
-        }*/
+        } 
     }
 
     public void OnLanding() {
@@ -69,6 +66,9 @@ public class PlayerMovement : MonoBehaviour{
     private void OnTriggerExit2D(Collider2D other) {
         if (other.gameObject.name.Equals("Piilo")) {
             canHide = false;
+            Physics2D.IgnoreLayerCollision(8, 9, false);
+            rend.sortingOrder = 3;
+            hiding = false;
         }
     }
 }
