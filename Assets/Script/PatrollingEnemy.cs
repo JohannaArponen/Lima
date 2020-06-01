@@ -57,10 +57,13 @@ public class PatrollingEnemy : MonoBehaviour{
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collider) {
+    private void OnTriggerEnter2D(Collider2D collisioninfo) {
         //FindPlayer = true;
-        collider.GetComponent<HealthSystem>().Damaged();
-       // collider.gameObject.name.Equals("Player");
+        if(collisioninfo.tag == "Player") {
+            FindObjectOfType<HealthSystem>().Damaged();
+        }
+           // other.GetComponent<HealthSystem>().Damaged();
+            // collider.gameObject.name.Equals("Player");
     }
 
     /*private void OnTriggerExit2D(Collider2D collider) {
