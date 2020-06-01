@@ -54,8 +54,8 @@ public class PlayerMovement : MonoBehaviour{
             horizontalMove = Vector2.zero;*/
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.name.Equals("Piilo")) {
+    private void OnTriggerEnter2D(Collider2D others) {
+        if (others.gameObject.name.Equals("Piilo")) {
             canHide = true;
         }
         /*if (other.gameObject.CompareTag("Coins")) {
@@ -63,8 +63,8 @@ public class PlayerMovement : MonoBehaviour{
         }*/
     }
 
-    private void OnTriggerExit2D(Collider2D other) {
-        if (other.gameObject.name.Equals("Piilo")) {
+    private void OnTriggerExit2D(Collider2D others) {
+        if (others.gameObject.name.Equals("Piilo")) {
             canHide = false;
             Physics2D.IgnoreLayerCollision(8, 9, false);
             rend.sortingOrder = 3;
