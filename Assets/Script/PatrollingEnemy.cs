@@ -15,11 +15,10 @@ public class PatrollingEnemy : MonoBehaviour{
     void Awake() {
         sr = GetComponentInChildren<SpriteRenderer>();
         sr.flipX = true;
-        dirX = -1f;
     }
 
     void Start() {
-        
+        dirX = -1f;
         //agent.destination = waypoints[nextWaypoint].position;
     }
 
