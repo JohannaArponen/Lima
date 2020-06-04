@@ -554,7 +554,7 @@ PrefabInstance:
     - target: {fileID: 210462155968721091, guid: ed647408eaf09e847a71dd0355314e45,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 209.8
+      value: 210.39
       objectReference: {fileID: 0}
     - target: {fileID: 210462155968721091, guid: ed647408eaf09e847a71dd0355314e45,
         type: 3}
@@ -913,6 +913,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 3.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750184266999733815, guid: 16c883740c9964748aa1108b418342a0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 29.236677
       objectReference: {fileID: 0}
     - target: {fileID: 1750184267222352935, guid: 16c883740c9964748aa1108b418342a0,
         type: 3}
@@ -2311,7 +2316,7 @@ PrefabInstance:
     - target: {fileID: 210462155968721091, guid: ed647408eaf09e847a71dd0355314e45,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.26
+      value: 5.2
       objectReference: {fileID: 0}
     - target: {fileID: 210462155968721091, guid: ed647408eaf09e847a71dd0355314e45,
         type: 3}
@@ -2967,6 +2972,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1750184266999733815, guid: 16c883740c9964748aa1108b418342a0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 29.4
+      objectReference: {fileID: 0}
     - target: {fileID: 1750184267222352935, guid: 16c883740c9964748aa1108b418342a0,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -3031,6 +3041,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "Taustatekij\xE4t (1)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750184267366396352, guid: 16c883740c9964748aa1108b418342a0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 23.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16c883740c9964748aa1108b418342a0, type: 3}
