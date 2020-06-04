@@ -44,6 +44,10 @@ public class PlayerMovement : MonoBehaviour{
         animator.SetBool("IsCrouching", isCrouching);
     }
 
+    public void OnDamage() {
+        animator.SetBool("IsDamage", false);
+    }
+
     void FixedUpdate() {
         //Move our character
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);

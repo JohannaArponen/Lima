@@ -1080,6 +1080,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PatrollingEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1018861913513926215, guid: c8efc562a7a4df942a138b8e0e430b82,
+        type: 3}
+      propertyPath: FindPlayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1337343155984671301, guid: c8efc562a7a4df942a138b8e0e430b82,
         type: 3}
       propertyPath: m_LocalPosition.x

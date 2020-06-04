@@ -1,19 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class HealthSystem : MonoBehaviour{
     public int health;
     public int numOfHearts;
 
     public ScoreManager sm;
+    public Animator animator;
+    public Rigidbody2D rb;
+    public float speed;
+  
 
     //public Image[] hearts;
     //public Sprite fullHeart;
     //public Sprite emptyHeart;
-
-
 
     void Update() {
         //if (health > numOfHearts) {
@@ -31,18 +35,18 @@ public class HealthSystem : MonoBehaviour{
         //        hearts[i].enabled = false;
         //    }
         //}
-
-
     }
 
-    public void Damaged() {
+    public void Damaged(Vector3 enemyPos) {
         print("Taking damage");
+        Knockback(enemyPos);
         health -= 1;
         sm.ChangeHealth(health);
         //if(health < numOfHearts) {
         //    numOfHearts = health;
         //}
-        if(health <= 0) {
+        animator.SetBool("IsDamage", true);
+        if (health <= 0) {
             Die();
         }
     }
@@ -50,5 +54,16 @@ public class HealthSystem : MonoBehaviour{
     public void Die() {
         Destroy(gameObject);
         FindObjectOfType<GameManager>().EndGame();
+    }
+
+    void Knockback(Vector3 enemyPos) {
+        var p = transform.position;
+        var E = enemyPos;
+        var t = p - E;
+        t.y = 0;
+        t.Normalize();
+        t += Vector3.up;
+        t.Normalize();
+        rb.AddForce(t * speed, ForceMode2D.Impulse);//.Add force(t * speed, forcenode.Impulse);
     }
 }

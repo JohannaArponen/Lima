@@ -236,6 +236,9 @@ MonoBehaviour:
   health: 3
   numOfHearts: 0
   sm: {fileID: 0}
+  animator: {fileID: 7525635934790310829}
+  rb: {fileID: 7525635934790310824}
+  speed: 20
 --- !u!1 &7525635934887494483
 GameObject:
   m_ObjectHideFlags: 0

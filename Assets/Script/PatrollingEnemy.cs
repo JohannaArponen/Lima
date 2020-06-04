@@ -52,7 +52,7 @@ public class PatrollingEnemy : MonoBehaviour{
     void GiveDamage() {
         if (FindPlayer) {
            if (GameObject.FindGameObjectWithTag("Player")) {
-                GetComponent<HealthSystem>().Damaged();
+                GetComponent<HealthSystem>().Damaged(transform.position);
             }
         }
     }
@@ -60,7 +60,7 @@ public class PatrollingEnemy : MonoBehaviour{
     private void OnTriggerEnter2D(Collider2D collisioninfo) {
         //FindPlayer = true;
         if(collisioninfo.tag == "Player") {
-            FindObjectOfType<HealthSystem>().Damaged();
+            FindObjectOfType<HealthSystem>().Damaged(enemyPos: transform.position);
         }
            // other.GetComponent<HealthSystem>().Damaged();
             // collider.gameObject.name.Equals("Player");
